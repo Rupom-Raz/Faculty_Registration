@@ -42,11 +42,7 @@ export default function MenuComp({
                     "aria-labelledby": "basic-button",
                 }}
             >
-                <MenuItem
-                    // component={DeadlineModal}
-                    divider
-                    className="menuItem"
-                >
+                <MenuItem divider className="menuItem">
                     <DeadlineModal
                         startDate={startDate}
                         onStartDate={onStartDate}

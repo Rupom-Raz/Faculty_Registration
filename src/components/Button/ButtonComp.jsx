@@ -1,8 +1,8 @@
-import { LockOutlined } from "@mui/icons-material";
 import { Button, Grid } from "@mui/material";
 import { colors } from "../../Theme/colors";
 
-const ButtonComp = ({onclick}) => {
+const ButtonComp = ({ onclick, icon, text, admissonOnclick }) => {
+
     return (
         <>
             <Button
@@ -11,11 +11,11 @@ const ButtonComp = ({onclick}) => {
                     backgroundColor: colors.purple,
                     color: colors.white,
                 }}
-                endIcon={<LockOutlined />}
+                endIcon={icon}
                 variant="outlined"
                 className="btn"
             >
-                Turn off Admisson
+                {text}
             </Button>
         </>
     );

@@ -1,98 +1,22 @@
-import { Grid } from "@mui/material";
-import { useState } from "react";
-import { colors } from "../src/Theme/colors";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
 import "./App.css";
-import ButtonComp from "./components/Button/ButtonComp";
-import SingleCard from "./components/RegistrationCard/SingleCard";
+import Semester from "./Pages/Semester";
 
-function App() {
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
-    const [off, setOff] = useState(false);
-    const onclick = () => {
-        setOff(true);
-    };
+import CourseLists from "./components/CourseLists";
 
-    const onStartDate = (e) => {
-        setStartDate(e.target.value);
-    };
-    const onEndDate = (e) => {
-        setEndDate(e.target.value);
-    };
-
+const App = () => {
     return (
         <>
-            <div
-                className="App"
-                style={{ backgroundColor: `${colors.lightPurple}` }}
-            >
-                <Grid container>
-                    <Grid item xs={12}>
-                        <ButtonComp onclick={onclick} />
-                    </Grid>
-
-                    <Grid container>
-                        <Grid item>
-                            <SingleCard
-                                startDate={startDate}
-                                onStartDate={onStartDate}
-                                endDate={endDate}
-                                onEndDate={onEndDate}
-                                btnValue={off}
-                                title="Faculty of BBA"
-                                subTitle="Department of Business Administration"
-                                degree="MBA"
-                                season="Fall-2022"
-                                admissonMessage="Admisson is Going On"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <SingleCard
-                                startDate={startDate}
-                                onStartDate={onStartDate}
-                                endDate={endDate}
-                                onEndDate={onEndDate}
-                                btnValue={off}
-                                title="Faculty of BBA"
-                                subTitle="Department of Business Administration"
-                                degree="MBA(Excutive)"
-                                season="Winter-2022"
-                                admissonMessage="Admisson is Going On"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <SingleCard
-                                startDate={startDate}
-                                onStartDate={onStartDate}
-                                endDate={endDate}
-                                onEndDate={onEndDate}
-                                btnValue={off}
-                                title="Faculty of CSE"
-                                subTitle="Department of Computer Science and Enginnering"
-                                degree="MSc"
-                                admissonMessage="Admisson is Going On"
-                                season="Summer-2022"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <SingleCard
-                                startDate={startDate}
-                                onStartDate={onStartDate}
-                                endDate={endDate}
-                                onEndDate={onEndDate}
-                                btnValue={off}
-                                title="Faculty of CSE"
-                                subTitle="Department of Computer Science and Enginnering"
-                                degree="MSc"
-                                admissonMessage="Admisson is Going On"
-                                season="Summer-2022"
-                            />
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </div>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/semester" element={<Semester />} />
+                    <Route path="/courselist" element={<CourseLists />} />
+                </Routes>
+            </Router>
         </>
     );
-}
+};
 
 export default App;

@@ -33,6 +33,7 @@ const SingleCard = ({
     subTitle,
     degree,
     season,
+    btn,
     admissonMessage,
     btnValue,
 }) => {
@@ -43,12 +44,11 @@ const SingleCard = ({
                     <Card
                         sx={{ maxWidth: 350, maxHeight: 350 }}
                         style={{
-                            backgroundColor: colors.trasparent,
+                            backgroundColor: colors.fullwhite,
                             borderRadius: "13px",
                         }}
                     >
                         <CardHeader
-                            avatar={<Avatar src={avatar}></Avatar>}
                             action={
                                 btnValue ? (
                                     <IconButton aria-label="settings">
@@ -60,12 +60,7 @@ const SingleCard = ({
                                     </IconButton>
                                 ) : (
                                     <IconButton>
-                                        <MenuComp
-                                            startDate={startDate}
-                                            onStartDate={onStartDate}
-                                            endDate={endDate}
-                                            onEndDate={onEndDate}
-                                        />
+                                        <MenuComp />
                                     </IconButton>
                                 )
                             }
@@ -84,18 +79,6 @@ const SingleCard = ({
                                 {admissonMessage}
                             </Typography>
                             <Typography variant="body2">{season}</Typography>
-                            <Typography
-                                style={{ fontWeight: 600 }}
-                                variant="body2"
-                            >
-                              Start Date: {startDate}
-                            </Typography>
-                            <Typography
-                                style={{ fontWeight: 600 }}
-                                variant="body2"
-                            >
-                             End Date: {endDate}
-                            </Typography>
                         </CardContent>
                     </Card>
                 </Grid>

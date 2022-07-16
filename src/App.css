@@ -10,7 +10,6 @@
 .App {
     font-family: var(--FontFamily);
     display: flex;
-    height: 100vh;
     padding: 20px;
 }
 .btn {
@@ -24,4 +23,51 @@
 }
 .cardContainer:hover {
     margin-top: -5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header ul li {
+    margin-left: 20px;
+    list-style: none;
+}
+
+.header ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.header ul li a:hover {
+    color: #777;
+}
+
+.header ul li a svg {
+    margin-right: 5px;
+}
+.courseCard {
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 28px 28px 56px #d9d9d9, -28px -28px 56px #ffffff;
+}
+.searchBox {
+    padding-left: 160px;
+}
+.tableRow {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+.error{
+    color: red;
 }

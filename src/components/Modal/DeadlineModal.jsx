@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import { colors } from "../../Theme/colors";
 import { Grid, TextField } from "@mui/material";
 
+
 const style = {
     position: "absolute",
     top: "50%",
@@ -20,7 +21,9 @@ const style = {
 };
 
 export default function DeadlineModal({
+    startDate,
     onStartDate,
+    endDate,
     onEndDate,
 }) {
     const [open, setOpen] = React.useState(false);
@@ -61,7 +64,6 @@ export default function DeadlineModal({
                             />
                         </Grid>
                     </Grid>
-                   
                 </Box>
             </Modal>
         </div>
