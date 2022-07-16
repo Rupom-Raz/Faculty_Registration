@@ -4,6 +4,7 @@ import "./App.css";
 import Semester from "./Pages/Semester";
 
 import CourseLists from "./components/CourseLists";
+import AddCurriculam from "./Pages/AddCurriculam";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <Routes>
                     <Route path="/semester" element={<Semester />} />
                     <Route path="/courselist" element={<CourseLists />} />
+                    <Route path="/curriculam" element={<AddCurriculam />} />
                 </Routes>
             </Router>
         </>
